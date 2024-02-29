@@ -11,18 +11,26 @@ import { NumberOfPlayers } from "./stylesPlayers";
 import { PlayerCard } from "@components/PlayerCard/playerCard";
 import { ListEmpty } from "@components/ListEmpty/listEmpty";
 import { Button } from "@components/Button/button";
+import { useRoute } from "@react-navigation/native";
+
+type RoutParams = {
+  group: string;
+}
 
 export function Players() {
   const [team, setTeam] = useState('Time A');
   const [players, setPlayers] = useState([]);
-  // 'Rodrigo', 'Biro', 'Vini', 'Ana', 'Mayk', 'Pedro', 'Cida', 'Celia'
+
+  const route = useRoute();
+  const { group } = route.params as RoutParams;
 
   return (
     <Container>
       <Header showBackButton />
 
       <Highlight 
-        title="Nome da turma"
+        // title="Nome da turma"
+        title={group}
         subtitle="Adicione a galera e separe os times"
       />
 
