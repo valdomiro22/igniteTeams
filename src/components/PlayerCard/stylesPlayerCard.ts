@@ -26,5 +26,5 @@ export const Icon = styled(MaterialIcons).attrs(({ theme }) => ({
   color: theme.COLORS.GRAY_200
 }))`
   margin-left: 16px;
-  margin-right: 4;
+  margin-right: 4px;
 `;
