@@ -16,7 +16,7 @@ import { AppError } from "@utils/AppError";
 import { playerAddByGroup } from "@storage/player/playerAddByGroup";
 import { playersGetByGroupAndTeam } from "@storage/player/playerGetByGroupAdTeam";
 import { PlayerStorageDTO } from "@storage/player/PlayerStorageDTO";
-import { playerRemoveByGroup } from "@storage/player/playerRemoveByGroup";
+import { playerRemoveByGroup} from "@storage/player/playerRemoveByGroup";
 import { Loading } from "@components/Loading/loading";
 
 type RoutParams = {
@@ -81,6 +81,17 @@ export function Players() {
       Alert.alert('remover pessoa', 'Não foi possível remover esta pessoa.');
     }
   }
+
+  // async function handleGroupRemove() {
+  //   Alert.alert(
+  //     'Remover',
+  //     'Deseja remover a turma?',
+  //     [
+  //       {text: 'Não', style: 'cancel'},
+  //       {text: 'Sim', onPress: () => groupRemove}
+  //     ]
+  //   );
+  // }
 
   useEffect(() => {
     fetchPlayersByTeam();
